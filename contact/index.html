@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../contact/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row py-5 g-4" id="">
+            <div class="contact min-vh-100 d-flex justify-content-center align-items-center">
+                <div class="container w-75 text-center">
+                    <div class="row g-4 " id="myForm">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="name" aria-describedby=""
+                                placeholder="Enter Your Name">
+                            <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">
+                                Special characters and numbers not allowed
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                                placeholder="Enter email">
+                            <div id="emailAlert" class="alert alert-danger w-100 mt-2 d-none">
+                                Email not valid *exemple@yyy.zzz
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="phone" aria-describedby=""
+                                placeholder="Enter Your Phone">
+                            <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none"> Enter valid Phone Number
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" class="form-control" id="age" aria-describedby=""
+                                placeholder="Enter Your Age">
+                            <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">Enter valid age</div>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" id="password" aria-describedby=""
+                                placeholder="Enter password">
+                            <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">
+                                Enter valid password *Minimum eight characters, at least one letter and one number:
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" id="repassword" aria-describedby=""
+                                placeholder="repassword">
+                            <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">
+                                Enter valid repassword
+                            </div>
+                        </div>
+                        <button id="Submit" type="submit" class="btn btn-outline-danger w-25 px-2 mt-3">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            const namePattern = /^[a-zA-Z\s'-]{1,50}$/;
+            const phonePattern = /^\(?\d{3}\)?[-\s]?\d{3}[-\s]?\d{4}$/;
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            const agePattern = /^(1[0-1][0-9]|120|[1-9][0-9]?)$/;
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            const repassword = document.getElementById('repassword').value;
+            const age = document.getElementById('age').value;
+            const email = document.getElementById('email').value;
+
+            let isValid = true;
+
+            if (!namePattern.test(name)) {
+                alert('Invalid name. Please enter a valid name (letters, spaces, hyphens, apostrophes only).');
+                isValid = false;
+            }
+
+            if (!phonePattern.test(phone)) {
+                alert('Invalid phone number. Please enter a valid phone number.');
+                isValid = false;
+            }
+
+            if (!passwordPattern.test(password)) {
+                alert('Invalid password. Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a digit, and a special character.');
+                isValid = false;
+            }
+
+            if (password !== repassword) {
+                alert('Passwords do not match. Please ensure both passwords are the same.');
+                isValid = false;
+            }
+
+            if (!agePattern.test(age)) {
+                alert('Invalid age. Please enter a valid age between 1 and 120.');
+                isValid = false;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert('Invalid email. Please enter a valid email address.');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+
+
+
+    
+    <script src="https://kit.fontawesome.com/1cf14daa72.js" crossorigin="anonymous"></script>
+    <script src="../contact/index.js"></script>
+</body>
+
+</html>

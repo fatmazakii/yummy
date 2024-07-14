@@ -1,0 +1,13 @@
+body{
+    background-color:black;
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.contact{
+    border: 1px dashed rosybrown;
+    
+}

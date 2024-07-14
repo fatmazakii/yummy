@@ -1,0 +1,125 @@
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #111;
+}
+.screen{
+    display: flex;
+}
+.navbar{
+    display: inline;
+    padding: 0px;
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0; */
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    display: flex;
+    z-index: 99 !important;
+    flex-direction: column;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    
+}
+.main{
+    text-align: center;
+    justify-content: space-between !important;
+    height: 100vh;
+    width: 100px;
+    background: white;
+    
+
+}
+/* .footer-nav{
+    position: static;
+    bottom: 0;
+} */
+.icon{
+    color: white;
+    
+}
+.text{
+    color: white;
+}
+.loading-screen{
+    position: absolute;
+    z-index: 9;
+    
+    display: flex;
+}
+.meal {
+    position: relative;
+    width: 300px; height: 300px;
+}
+.image{
+    width: 300px;
+    height: 300px;
+}
+.meal-layer{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #f1f1f1;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    z-index: 100;
+}
+.meal:hover .meal-layer {
+    opacity: 0.8;   
+}
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}

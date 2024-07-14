@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container w-75" id="search">
+        <div class="row py-4 text-white">
+            <div class="col-md-6">
+                <input oninput="searchMeal()" type="text" class="form-control bg-transparent text-white" id="searchTerm" placeholder="search by name">
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control bg-transparent text-white" maxlength="1" id="lSearchInput" placeholder="search by first letter">
+            </div>
+            <ul id="results" style="display: flex;flex-wrap: wrap;margin: 5px; margin-top:100px ;"></ul>
+            
+        </div>
+        
+    </div> 
+    
+
+
+
+   
+    <script src="https://kit.fontawesome.com/1cf14daa72.js" crossorigin="anonymous"></script>
+    <script src="../js/index.js"></script>
+</body>
+
+</html>
